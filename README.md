@@ -1,3 +1,3 @@
 ## Installation
 
-    npm install node-logger
+    npm install node-logger --save
