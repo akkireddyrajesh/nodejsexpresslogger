@@ -1,6 +1,6 @@
 {
     "name": "nodejsexpresslogger",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "this is for logging data in logs and displaying on console",
     "main": "index.js",
     "scripts": {
@@ -11,7 +11,11 @@
         "logger",
         "node logger"
     ],
-    "author": "rajesh",
+    "author": "akkireddyrajesh",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/akkireddyrajesh/nodejsexpresslogger"
+    },
     "license": "MIT",
     "dependencies": {
         "winston": "^3.2.1"
