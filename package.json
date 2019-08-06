@@ -1,0 +1,19 @@
+{
+    "name": "nodejsexpresslogger",
+    "version": "1.0.0",
+    "description": "this is for logging data in logs and displaying on console",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test.js"
+    },
+    "keywords": [
+        "node",
+        "logger",
+        "node logger"
+    ],
+    "author": "rajesh",
+    "license": "MIT",
+    "dependencies": {
+        "winston": "^3.2.1"
+    }
+}
