@@ -1,16 +1,14 @@
 var winston = require('winston');
 const { createLogger, format, transports } = require('winston');
 const { splat, combine, timestamp, label, printf } = format;
-
 var exports = module.exports = {};
 
-
 const myFormat = printf(({ timestamp, level, message, msgData }) => {
-    // let req.headers
-    let result = `[${timestamp}] [${level}] message:{${message}}`;
+    // preparing log formate with event level and timestamp and log message 
+    let result = `[${level}] [${timestamp}] [errRefId:${Date.now()}] message:{${message}}`;
 
-    //other data
-    if (msgData) result += `,data :${msgData ? JSON.stringify(msgData)  : null}`;
+    //log message description
+    if (msgData) result += `, messageDesc :${msgData ? JSON.stringify(msgData)  : null}`;
 
     return result;
 });
@@ -25,7 +23,7 @@ const logger = winston.createLogger({
     transports: [
         new winston.transports.File({
             level: 'info',
-            filename: './logs/all_event-logs.log',
+            filename: './logs/all_events.log',
             handleExceptions: true,
             json: true,
             maxsize: 5242880, //5MB
@@ -46,8 +44,6 @@ const logger = winston.createLogger({
     ],
     exitOnError: false
 })
-
-// logger.info(msg, { msgData: msgData });
 
 //
 // If we're not in production then log to the `console` with the format:
