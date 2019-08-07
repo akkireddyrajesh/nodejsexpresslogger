@@ -5,7 +5,7 @@ var exports = module.exports = {};
 
 const myFormat = printf(({ timestamp, level, message, msgData }) => {
     // preparing log formate with event level and timestamp and log message 
-    let result = `[${level}] [${timestamp}] [errRefId:${Date.now()}] message:{${message}}`;
+    let result = `[${level}] [${timestamp}] [eventRefId:${Date.now()}] message:{${message}}`;
 
     //log message description
     if (msgData) result += `, messageDesc :${msgData ? JSON.stringify(msgData)  : null}`;
@@ -56,8 +56,8 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 exports.info = function(msg, msgData) {
-    logger.info(msg, { msgData: msgData });
+    logger.info(msg, { Description: msgData });
 }
 exports.err = function(msg, msgData) {
-    logger.error(msg, { msgData: msgData });
+    logger.error(msg, { Description: msgData });
 }

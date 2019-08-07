@@ -1,6 +1,6 @@
 {
     "name": "nodejsexpresslogger",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "this is for logging data in logs and displaying on console",
     "main": "index.js",
     "scripts": {
